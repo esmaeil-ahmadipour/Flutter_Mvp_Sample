@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mvp_sample/model/model.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -10,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  AppModel _appModel ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,8 +20,8 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: <Widget>[
-          TextField(),
-          TextField(),
+          TextField(controller: _appModel.controllerNumber1,),
+          TextField(controller: _appModel.controllerNumber2,),
           RaisedButton(
             onPressed: (){},
             child: Icon(Icons.add),
